@@ -21,6 +21,12 @@ public class SortTest extends TestCase {
         int[] rightHalf = new int[] {6,17,22};
         int[] expectedResult = new int[] {5,6,17,19,22,34,81};
         Sort.merge(startingArray,leftHalf,rightHalf);
-        assertFalse(Arrays.equals(startingArray, expectedResult));
+        assertTrue(Arrays.equals(startingArray, expectedResult));
+    }
+    public void testMergeSort() {
+        int[] unsorted = new int[] {19,5,34,81,17,22,6};
+        Sort.mergeSort(unsorted);
+        int[] sorted = new int[] {5,6,17,19,22,34,81};
+        assertTrue(Arrays.equals(unsorted, sorted));
     }
 }
