@@ -49,15 +49,18 @@ public class Sort {
         }
     }
     public static void mergeSort(int[] arr){
-        if (arr.length < 2)
+        if (arr.length < 2) {
             return;
+        }
         int mid = arr.length / 2;
         int left[] = new int[mid];
         int right[] = new int[arr.length - mid];
-        for (int i = 0; i < mid; i++)
+        for (int i = 0; i < mid; i++) {
             left[i] = arr[i];
-        for (int i = mid; i < arr.length; i++)
+        }
+        for (int i = mid; i < arr.length; i++) {
             right[i - mid] = arr[i];
+        }
         mergeSort(left);
         mergeSort(right);
         merge(arr, left, right);
